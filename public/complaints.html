@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Management | Smart Civic</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .navbar {
+            background: #12355b;
+            color: white;
+            padding: 18px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            background: #2563eb;
+            padding: 9px 15px;
+            border-radius: 7px;
+        }
+
+        .container {
+            max-width: 1450px;
+            margin: 30px auto;
+            padding: 0 25px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .filter-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+
+            font-size: 14px;
+            background: white;
+        }
+
+        .clear-button {
+            margin-top: 12px;
+
+            padding: 9px 15px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: #64748b;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .results {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            overflow-x: auto;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background: #f8fafc;
+            color: #475569;
+            font-size: 13px;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .complaint-link {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .complaint-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .high {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .low {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .critical {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-select {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            background: white;
+        }
+
+        .empty {
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        @media(max-width: 900px) {
+
+            .filter-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏙️ Smart Civic
+    </div>
+
+    <a
+        href="/dashboard.html"
+        class="back-button">
+
+        ← Officer Dashboard
+
+    </a>
+
+</nav>
+
+
+
+<div class="container">
+
+
+    <h1>
+        📋 Complaint Management
+    </h1>
+
+    <p class="subtitle">
+        Search, filter and manage citizen complaints
+    </p>
+
+
+
+    <!-- FILTERS -->
+
+    <div class="filter-panel">
+
+        <div class="filter-grid">
+
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search by ID, complaint or location..."
+                oninput="applyFilters()"
+            >
+
+
+            <select
+                id="statusFilter"
+                onchange="applyFilters()">
+
+                <option value="Active">
+                    Active Complaints
+                </option>
+
+                <option value="All">
+                    All Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Assigned">
+                    Assigned
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Resolved">
+                    Resolved
+                </option>
+
+            </select>
+
+
+            <select
+                id="departmentFilter"
+                onchange="applyFilters()">
+
+                <option value="All">
+                    All Departments
+                </option>
+
+            </select>
+
+
+            <select
+                id="riskFilter"
+                onchange="applyFilters()">
+
+                <option value="All">
+                    All Risk Levels
+                </option>
+
+                <option value="High Risk">
+                    High Risk
+                </option>
+
+                <option value="Medium Risk">
+                    Medium Risk
+                </option>
+
+                <option value="Low Risk">
+                    Low Risk
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="clear-button"
+            onclick="clearFilters()">
+
+            Clear Filters
+
+        </button>
+
+    </div>
+
+
+
+    <div
+        id="results"
+        class="results">
+
+    </div>
+
+
+
+    <!-- TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Complaint</th>
+
+                    <th>Location</th>
+
+                    <th>Category</th>
+
+                    <th>Department</th>
+
+                    <th>Severity</th>
+
+                    <th>Priority</th>
+
+                    <th>Risk Score</th>
+
+                    <th>Alert</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="complaintTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+let allComplaints = [];
+
+
+
+/*
+================================
+LOAD COMPLAINTS
+================================
+*/
+
+async function loadComplaints() {
+
+    try {
+
+        const response =
+            await fetch("/api/complaints");
+
+
+        allComplaints =
+            await response.json();
+
+
+        populateDepartments();
+
+
+        applyFilters();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+/*
+================================
+DEPARTMENTS
+================================
+*/
+
+function populateDepartments() {
+
+    const select =
+        document.getElementById(
+            "departmentFilter"
+        );
+
+
+    const departments =
+        [
+            ...new Set(
+
+                allComplaints
+                    .map(
+                        item =>
+                            item.department
+                    )
+                    .filter(Boolean)
+
+            )
+        ];
+
+
+    select.innerHTML = `
+
+        <option value="All">
+            All Departments
+        </option>
+
+    `;
+
+
+    departments
+        .sort()
+        .forEach(department => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value =
+                department;
+
+            option.textContent =
+                department;
+
+            select.appendChild(
+                option
+            );
+
+        });
+
+}
+
+
+
+/*
+================================
+FILTER
+================================
+*/
+
+function applyFilters() {
+
+    const search =
+        document
+            .getElementById(
+                "searchInput"
+            )
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const status =
+        document
+            .getElementById(
+                "statusFilter"
+            )
+            .value;
+
+
+    const department =
+        document
+            .getElementById(
+                "departmentFilter"
+            )
+            .value;
+
+
+    const risk =
+        document
+            .getElementById(
+                "riskFilter"
+            )
+            .value;
+
+
+
+    const filtered =
+        allComplaints.filter(item => {
+
+
+            const itemStatus =
+                item.status ||
+                "Pending";
+
+
+            const searchMatch =
+
+                !search ||
+
+                String(item.id)
+                    .includes(search) ||
+
+                (item.complaint || "")
+                    .toLowerCase()
+                    .includes(search) ||
+
+                (item.location || "")
+                    .toLowerCase()
+                    .includes(search);
+
+
+
+            let statusMatch =
+                true;
+
+
+            if (
+                status === "Active"
+            ) {
+
+                statusMatch =
+                    itemStatus !==
+                    "Resolved";
+
+            }
+
+            else if (
+                status !== "All"
+            ) {
+
+                statusMatch =
+                    itemStatus ===
+                    status;
+
+            }
+
+
+
+            const departmentMatch =
+
+                department === "All" ||
+
+                item.department ===
+                department;
+
+
+
+            const riskMatch =
+
+                risk === "All" ||
+
+                item.riskLevel ===
+                risk;
+
+
+
+            return (
+
+                searchMatch &&
+                statusMatch &&
+                departmentMatch &&
+                riskMatch
+
+            );
+
+        });
+
+
+    displayComplaints(
+        filtered
+    );
+
+
+    document.getElementById(
+        "results"
+    ).innerText =
+
+        `Showing ${filtered.length} of ${allComplaints.length} complaints`;
+
+}
+
+
+
+/*
+================================
+DISPLAY TABLE
+================================
+*/
+
+function displayComplaints(
+    complaints
+) {
+
+    const table =
+        document.getElementById(
+            "complaintTable"
+        );
+
+
+    table.innerHTML = "";
+
+
+    if (
+        complaints.length === 0
+    ) {
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="10"
+                    class="empty">
+
+                    No complaints found.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    complaints
+        .slice()
+        .reverse()
+        .forEach(item => {
+
+
+            let severityClass =
+                "low";
+
+
+            if (
+                item.severity ===
+                "High"
+            ) {
+
+                severityClass =
+                    "high";
+
+            }
+
+            else if (
+                item.severity ===
+                "Medium"
+            ) {
+
+                severityClass =
+                    "medium";
+
+            }
+
+
+
+            let priorityClass =
+                "low";
+
+
+            if (
+                item.priority ===
+                "Critical"
+            ) {
+
+                priorityClass =
+                    "critical";
+
+            }
+
+            else if (
+                item.priority ===
+                "High"
+            ) {
+
+                priorityClass =
+                    "high";
+
+            }
+
+            else if (
+                item.priority ===
+                "Medium"
+            ) {
+
+                priorityClass =
+                    "medium";
+
+            }
+
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+
+                    <a
+                        href="/complaint.html?id=${item.id}"
+                        class="complaint-link">
+
+                        #${item.id}
+
+                    </a>
+
+                </td>
+
+
+                <td>
+                    ${item.complaint}
+                </td>
+
+
+                <td>
+                    ${item.location}
+                </td>
+
+
+                <td>
+                    ${item.category || "N/A"}
+                </td>
+
+
+                <td>
+                    ${item.department || "N/A"}
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="badge ${severityClass}">
+
+                        ${item.severity || "N/A"}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="badge ${priorityClass}">
+
+                        ${item.priority || "N/A"}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <strong>
+                        ${item.riskScore || 0}
+                    </strong>
+
+                    / 100
+
+                </td>
+
+
+                <td>
+
+                    ${
+                        item.isAnomaly
+                        ? "🚨 ANOMALY"
+                        : "✅ Normal"
+                    }
+
+                </td>
+
+
+                <td>
+
+                    <select
+                        class="status-select"
+                        onchange="
+                            updateStatus(
+                                ${item.id},
+                                this.value
+                            )
+                        ">
+
+                        <option
+                            value="Pending"
+                            ${
+                                !item.status ||
+                                item.status === "Pending"
+                                ? "selected"
+                                : ""
+                            }>
+
+                            Pending
+
+                        </option>
+
+
+                        <option
+                            value="Assigned"
+                            ${
+                                item.status === "Assigned"
+                                ? "selected"
+                                : ""
+                            }>
+
+                            Assigned
+
+                        </option>
+
+
+                        <option
+                            value="In Progress"
+                            ${
+                                item.status === "In Progress"
+                                ? "selected"
+                                : ""
+                            }>
+
+                            In Progress
+
+                        </option>
+
+
+                        <option
+                            value="Resolved"
+                            ${
+                                item.status === "Resolved"
+                                ? "selected"
+                                : ""
+                            }>
+
+                            Resolved
+
+                        </option>
+
+                    </select>
+
+                </td>
+
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        });
+
+}
+
+
+
+/*
+================================
+UPDATE STATUS
+================================
+*/
+
+async function updateStatus(
+    id,
+    status
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/complaints/${id}`,
+                {
+
+                    method: "PUT",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+                            status:
+                                status
+                        })
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Status update failed"
+            );
+
+        }
+
+
+        const complaint =
+            allComplaints.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (complaint) {
+
+            complaint.status =
+                status;
+
+        }
+
+
+        applyFilters();
+
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to update status."
+        );
+
+    }
+
+}
+
+
+
+/*
+================================
+CLEAR FILTERS
+================================
+*/
+
+function clearFilters() {
+
+    document.getElementById(
+        "searchInput"
+    ).value = "";
+
+
+    document.getElementById(
+        "statusFilter"
+    ).value = "Active";
+
+
+    document.getElementById(
+        "departmentFilter"
+    ).value = "All";
+
+
+    document.getElementById(
+        "riskFilter"
+    ).value = "All";
+
+
+    applyFilters();
+
+}
+
+
+
+/*
+================================
+START
+================================
+*/
+
+loadComplaints();
+
+
+</script>
+
+
+</body>
+
+</html>

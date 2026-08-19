@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Verify Complaint | Smart Civic</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .navbar {
+            background: #12355b;
+            color: white;
+            padding: 18px 7%;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .info {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .resolved {
+            background: #16a34a;
+        }
+
+        .not-resolved {
+            background: #dc2626;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 7px;
+            border: 1px solid #cbd5e1;
+            resize: vertical;
+            min-height: 90px;
+            box-sizing: border-box;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏙️ Smart Civic
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>
+            Verify Your Complaint
+        </h1>
+
+        <p>
+            Please confirm whether your reported issue
+            has actually been resolved.
+        </p>
+
+
+        <div class="info">
+
+            <strong>
+                Complaint ID
+            </strong>
+
+            <span id="complaintId">
+                Loading...
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <strong>
+                Complaint
+            </strong>
+
+            <p id="complaint">
+                Loading...
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <strong>
+                Location
+            </strong>
+
+            <p id="location">
+                Loading...
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <strong>
+                Current Status
+            </strong>
+
+            <span id="status">
+                Loading...
+            </span>
+
+        </div>
+
+
+        <label>
+            Optional feedback
+        </label>
+
+        <textarea
+            id="note"
+            placeholder="Add a short note about the current condition..."
+        ></textarea>
+
+
+        <div
+            id="buttons"
+            class="buttons">
+
+            <button
+                class="resolved"
+                onclick="
+                    verifyComplaint(true)
+                ">
+
+                ✅ Issue Resolved
+
+            </button>
+
+
+            <button
+                class="not-resolved"
+                onclick="
+                    verifyComplaint(false)
+                ">
+
+                ❌ Still Not Resolved
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="result"
+            class="result">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const complaintId =
+    params.get("id");
+
+
+let currentComplaint = null;
+
+
+
+// ========================================
+// LOAD COMPLAINT
+// ========================================
+
+async function loadComplaint() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/complaints"
+            );
+
+
+        const complaints =
+            await response.json();
+
+
+        currentComplaint =
+            complaints.find(
+                item =>
+                    item.id ==
+                    complaintId
+            );
+
+
+        if (!currentComplaint) {
+
+            document
+                .getElementById(
+                    "status"
+                )
+                .innerText =
+                "Complaint not found";
+
+            return;
+
+        }
+
+
+        document.getElementById(
+            "complaintId"
+        ).innerText =
+            "#" +
+            currentComplaint.id;
+
+
+        document.getElementById(
+            "complaint"
+        ).innerText =
+            currentComplaint.complaint;
+
+
+        document.getElementById(
+            "location"
+        ).innerText =
+            currentComplaint.location;
+
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            currentComplaint.status ||
+            "Pending";
+
+
+        /*
+        Already closed
+        */
+
+        if (
+            currentComplaint.status ===
+            "Closed"
+        ) {
+
+            document.getElementById(
+                "buttons"
+            ).style.display =
+                "none";
+
+
+            showResult(
+                "✅ This complaint has already been verified and closed.",
+                false
+            );
+
+        }
+
+
+    }
+
+    catch(error) {
+
+        console.error(
+            error
+        );
+
+    }
+
+}
+
+
+
+// ========================================
+// VERIFY
+// ========================================
+
+async function verifyComplaint(
+    resolved
+) {
+
+    const note =
+        document
+            .getElementById(
+                "note"
+            )
+            .value
+            .trim();
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/complaints/${complaintId}/verify`,
+                {
+
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            resolved:
+                                resolved,
+
+                            note:
+                                note
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        document.getElementById(
+            "buttons"
+        ).style.display =
+            "none";
+
+
+        if (resolved) {
+
+            showResult(
+                "✅ Thank you. The issue has been verified as resolved.",
+                false
+            );
+
+        }
+        else {
+
+            showResult(
+                "🚨 The complaint has been reopened for further action.",
+                false
+            );
+
+        }
+
+    }
+
+    catch(error) {
+
+        showResult(
+            "❌ " + error.message,
+            true
+        );
+
+    }
+
+}
+
+
+
+// ========================================
+// RESULT
+// ========================================
+
+function showResult(
+    message,
+    isError
+) {
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    result.innerText =
+        message;
+
+
+    result.style.background =
+        isError
+            ? "#fef2f2"
+            : "#f0fdf4";
+
+
+    result.style.color =
+        isError
+            ? "#b91c1c"
+            : "#166534";
+
+}
+
+
+loadComplaint();
+
+</script>
+
+
+</body>
+
+</html>

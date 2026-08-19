@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Details | Smart Civic</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #12355b;
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        /* CONTAINER */
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+
+        /* NAVIGATION */
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .nav-button {
+            text-decoration: none;
+            background: white;
+            color: #2563eb;
+            padding: 10px 16px;
+            border-radius: 7px;
+            border: 1px solid #dbe3ef;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            background: #eff6ff;
+        }
+
+
+        /* HEADER */
+
+        .header-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .header-card h1 {
+            margin: 0;
+        }
+
+
+        /* GRID */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* CARD */
+
+        .card {
+            background: white;
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+
+        /* COMPLAINT */
+
+        .complaint-text {
+            background: #f8fafc;
+
+            padding: 18px;
+
+            border-radius: 8px;
+
+            line-height: 1.6;
+        }
+
+
+        /* INFO */
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+
+        /* RISK */
+
+        .risk-score {
+            font-size: 42px;
+            font-weight: bold;
+
+            color: #dc2626;
+
+            text-align: center;
+        }
+
+        .risk-label {
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #dc2626;
+        }
+
+
+        /* ALERT */
+
+        .anomaly {
+            background: #fff1f2;
+
+            border-left: 5px solid #dc2626;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+
+        /* SIMILAR */
+
+        .similar {
+            background: #f8fafc;
+
+            padding: 12px;
+
+            margin-bottom: 8px;
+
+            border-radius: 7px;
+        }
+
+
+        /* STATUS */
+
+        select {
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 7px;
+
+            border: 1px solid #ccc;
+
+            font-size: 15px;
+        }
+
+
+        /* LOADING */
+
+        #loading {
+            text-align: center;
+
+            padding: 50px;
+
+            font-size: 18px;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 700px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏙️ Smart Civic
+    </div>
+
+    <div>
+        Officer Command Center
+    </div>
+
+</nav>
+
+
+
+<div class="container">
+
+
+    <!-- NAVIGATION -->
+
+    <div class="navigation">
+
+        <a
+            href="/dashboard.html"
+            class="nav-button">
+
+            ← Dashboard
+
+        </a>
+
+
+        <a
+            href="/"
+            class="nav-button">
+
+            + New Complaint
+
+        </a>
+
+    </div>
+
+
+
+    <!-- LOADING -->
+
+    <div id="loading">
+
+        Loading complaint details...
+
+    </div>
+
+
+
+    <!-- CONTENT -->
+
+    <div
+        id="content"
+        style="display:none;">
+
+
+        <!-- HEADER -->
+
+        <div class="header-card">
+
+            <h1>
+
+                Complaint
+                <span id="complaintId"></span>
+
+            </h1>
+
+            <p id="createdAt"></p>
+
+        </div>
+
+
+
+        <!-- MAIN GRID -->
+
+        <div class="grid">
+
+
+            <!-- COMPLAINT -->
+
+            <div class="card">
+
+                <h2>
+                    📝 Citizen Complaint
+                </h2>
+
+                <div
+                    id="complaintText"
+                    class="complaint-text">
+                </div>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="card">
+
+                <h2>
+                    📍 Location
+                </h2>
+
+                <div
+                    id="location">
+                </div>
+
+            </div>
+
+
+
+            <!-- AI ANALYSIS -->
+
+            <div class="card">
+
+                <h2>
+                    🤖 AI Analysis
+                </h2>
+
+
+                <div class="info">
+
+                    <strong>
+                        Category
+                    </strong>
+
+                    <span id="category"></span>
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>
+                        Department
+                    </strong>
+
+                    <span id="department"></span>
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>
+                        Severity
+                    </strong>
+
+                    <span id="severity"></span>
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>
+                        Priority
+                    </strong>
+
+                    <span id="priority"></span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RISK -->
+
+            <div class="card">
+
+                <h2>
+                    ⚠️ Risk Analysis
+                </h2>
+
+
+                <div
+                    id="riskScore"
+                    class="risk-score">
+                </div>
+
+
+                <div
+                    id="riskLevel"
+                    class="risk-label">
+                </div>
+
+            </div>
+
+
+
+            <!-- ANOMALY -->
+
+            <div class="card">
+
+                <h2>
+                    🚨 Anomaly Detection
+                </h2>
+
+
+                <div
+                    id="anomaly">
+                </div>
+
+            </div>
+
+
+
+            <!-- SIMILAR -->
+
+            <div class="card">
+
+                <h2>
+                    🔎 Similar Complaints
+                </h2>
+
+
+                <div
+                    id="similarComplaints">
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="card">
+
+                <h2>
+                    📌 Complaint Status
+                </h2>
+
+
+                <select
+                    id="status"
+                    onchange="updateStatus()">
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Assigned">
+                        Assigned
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+// GET COMPLAINT ID FROM URL
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const complaintId =
+    params.get("id");
+
+
+
+// LOAD COMPLAINT
+
+async function loadComplaint() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/complaints"
+            );
+
+
+        const complaints =
+            await response.json();
+
+
+        const complaint =
+            complaints.find(
+                item =>
+                    item.id ==
+                    complaintId
+            );
+
+
+        if (!complaint) {
+
+            document.getElementById(
+                "loading"
+            ).innerHTML =
+                "❌ Complaint not found.";
+
+            return;
+
+        }
+
+
+        // BASIC DETAILS
+
+        document.getElementById(
+            "complaintId"
+        ).innerText =
+            "#" + complaint.id;
+
+
+        document.getElementById(
+            "createdAt"
+        ).innerText =
+            new Date(
+                complaint.createdAt
+            ).toLocaleString();
+
+
+        document.getElementById(
+            "complaintText"
+        ).innerText =
+            complaint.complaint;
+
+
+        document.getElementById(
+            "location"
+        ).innerText =
+            complaint.location;
+
+
+        // AI
+
+        document.getElementById(
+            "category"
+        ).innerText =
+            complaint.category ||
+            "N/A";
+
+
+        document.getElementById(
+            "department"
+        ).innerText =
+            complaint.department ||
+            "N/A";
+
+
+        document.getElementById(
+            "severity"
+        ).innerText =
+            complaint.severity ||
+            "N/A";
+
+
+        document.getElementById(
+            "priority"
+        ).innerText =
+            complaint.priority ||
+            "N/A";
+
+
+        // RISK
+
+        document.getElementById(
+            "riskScore"
+        ).innerText =
+            complaint.riskScore +
+            " / 100";
+
+
+        document.getElementById(
+            "riskLevel"
+        ).innerText =
+            complaint.riskLevel;
+
+
+        // ANOMALY
+
+        document.getElementById(
+            "anomaly"
+        ).innerHTML =
+
+            complaint.isAnomaly
+
+            ?
+
+            `
+            <div class="anomaly">
+                🚨 ANOMALY DETECTED
+                <br><br>
+                This complaint requires
+                additional attention.
+            </div>
+            `
+
+            :
+
+            `
+            <div>
+                ✅ No anomaly detected.
+            </div>
+            `;
+
+
+        // SIMILAR COMPLAINTS
+
+        const similar =
+            document.getElementById(
+                "similarComplaints"
+            );
+
+
+        similar.innerHTML = "";
+
+
+        if (
+            !complaint.similarComplaints ||
+            complaint.similarComplaints.length === 0
+        ) {
+
+            similar.innerHTML =
+                "No similar complaints found.";
+
+        }
+
+        else {
+
+            complaint
+                .similarComplaints
+                .forEach(item => {
+
+                    const div =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    div.className =
+                        "similar";
+
+
+                    div.innerHTML = `
+
+                        <strong>
+                            Complaint #${item.id}
+                        </strong>
+
+                        <br>
+
+                        Similarity:
+                        ${item.similarity}%
+
+                    `;
+
+
+                    similar.appendChild(
+                        div
+                    );
+
+                });
+
+        }
+
+
+        // STATUS
+
+        document.getElementById(
+            "status"
+        ).value =
+            complaint.status ||
+            "Pending";
+
+
+        // SHOW
+
+        document.getElementById(
+            "loading"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "content"
+        ).style.display =
+            "block";
+
+
+    }
+
+    catch(error) {
+
+        document.getElementById(
+            "loading"
+        ).innerHTML =
+            "❌ Failed to load complaint.";
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+// UPDATE STATUS
+
+async function updateStatus() {
+
+    const status =
+        document.getElementById(
+            "status"
+        ).value;
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/complaints/${complaintId}`,
+                {
+
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        status: status
+                    })
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Status update failed"
+            );
+
+        }
+
+
+        console.log(
+            "Status updated:",
+            status
+        );
+
+
+    }
+
+    catch(error) {
+
+        alert(
+            "Unable to update status."
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+// START
+
+loadComplaint();
+
+</script>
+
+
+</body>
+
+</html>

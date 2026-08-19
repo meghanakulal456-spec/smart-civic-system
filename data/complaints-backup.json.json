@@ -1,0 +1,1550 @@
+[
+  {
+    "id": 1,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "Indiranagar",
+    "createdAt": "2026-08-18T05:07:40.784Z"
+  },
+  {
+    "id": 2,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "indiranagar",
+    "createdAt": "2026-08-18T05:14:12.248Z"
+  },
+  {
+    "id": 3,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "indiranagar",
+    "createdAt": "2026-08-18T05:14:14.558Z"
+  },
+  {
+    "id": 4,
+    "complaint": "Garbage is overflowing near the school and it is unsafe",
+    "location": "indiranagar",
+    "createdAt": "2026-08-18T05:16:26.839Z"
+  },
+  {
+    "id": 5,
+    "complaint": "Garbage is overflowing near the school and it is unsafe",
+    "location": "Indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "createdAt": "2026-08-18T05:28:12.893Z"
+  },
+  {
+    "id": 6,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 2,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 3,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 4,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 67
+      },
+      {
+        "id": 5,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 67
+      }
+    ],
+    "createdAt": "2026-08-18T05:30:53.804Z"
+  },
+  {
+    "id": 7,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "Indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 2,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 3,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 6,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 4,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 67
+      }
+    ],
+    "isAnomaly": true,
+    "createdAt": "2026-08-18T05:33:47.461Z"
+  },
+  {
+    "id": 8,
+    "complaint": "Garbage is overflowing near the school and it is unsafe",
+    "location": "Indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 4,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 5,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      },
+      {
+        "id": 2,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      },
+      {
+        "id": 3,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T05:36:17.325Z"
+  },
+  {
+    "id": 9,
+    "complaint": "Garbage is overflowing near the school and it is unsafe",
+    "location": "Indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 4,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 5,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 8,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      },
+      {
+        "id": 2,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T05:39:57.824Z"
+  },
+  {
+    "id": 10,
+    "complaint": "Garbage is overflowing near the school and it is unsafe",
+    "location": "Indiranagar",
+    "category": "Garbage",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 4,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 5,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 8,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 9,
+        "complaint": "Garbage is overflowing near the school and it is unsafe",
+        "similarity": 100
+      },
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 67
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T05:48:38.242Z"
+  },
+  {
+    "id": 11,
+    "complaint": "Garbage is overflowing near the school",
+    "location": "indiranagar",
+    "category": "Garbage",
+    "department": "Sanitation",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 1,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 2,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 3,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 6,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      },
+      {
+        "id": 7,
+        "complaint": "Garbage is overflowing near the school",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T06:07:46.336Z"
+  },
+  {
+    "id": 12,
+    "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+    "location": "indiranagar",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "High",
+    "similarComplaints": [],
+    "isAnomaly": true,
+    "riskScore": 60,
+    "riskLevel": "Medium Risk",
+    "createdAt": "2026-08-18T06:10:30.003Z"
+  },
+  {
+    "id": 13,
+    "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+    "location": "indiranagar",
+    "category": "Electricity",
+    "department": "General Administration",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 75,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T06:13:42.125Z"
+  },
+  {
+    "id": 14,
+    "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+    "location": "indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 75,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T06:15:32.769Z"
+  },
+  {
+    "id": 15,
+    "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+    "location": "indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      },
+      {
+        "id": 14,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T06:39:31.622Z"
+  },
+  {
+    "id": 16,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 14,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 15,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T06:40:08.378Z"
+  },
+  {
+    "id": 17,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 14,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 15,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "createdAt": "2026-08-18T07:15:27.007Z"
+  },
+  {
+    "id": 18,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 14,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "createdAt": "2026-08-18T07:18:34.758Z"
+  },
+  {
+    "id": 19,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      },
+      {
+        "id": 13,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "createdAt": "2026-08-18T07:24:01.632Z"
+  },
+  {
+    "id": 20,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 19,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 12,
+        "complaint": "\nThe street light near the bus stop has been broken for several days, making the road unsafe at night.\n\n",
+        "similarity": 94
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "createdAt": "2026-08-18T07:30:42.327Z"
+  },
+  {
+    "id": 21,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 19,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 20,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "createdAt": "2026-08-18T07:40:33.558Z",
+    "status": "In Progress"
+  },
+  {
+    "id": 22,
+    "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+    "location": "INDIRANAGAR",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 19,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 20,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-08-18T07:42:52.045Z"
+  },
+  {
+    "id": 23,
+    "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+    "location": "kolar district, karnataka  india",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Medium",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 20,
+    "riskLevel": "Low Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-08-18T07:54:40.112Z"
+  },
+  {
+    "id": 24,
+    "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+    "location": "kolar district, karnataka  india",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Medium",
+    "similarComplaints": [
+      {
+        "id": 23,
+        "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": false,
+    "riskScore": 35,
+    "riskLevel": "Low Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:00:47.152Z"
+  },
+  {
+    "id": 25,
+    "complaint": "The drainage near the residential area is blocked and dirty water is collecting on the road.",
+    "location": "majestic",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "High",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 40,
+    "riskLevel": "Medium Risk",
+    "priority": "High",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:04:19.102Z"
+  },
+  {
+    "id": 26,
+    "complaint": "People are illegally dumping garbage near the public park and the area is becoming unhygienic.",
+    "location": "hyderabad",
+    "category": "Garbage",
+    "department": "Sanitation",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 10,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:07:38.599Z"
+  },
+  {
+    "id": 27,
+    "complaint": "A water pipeline is leaking continuously near the main road and a large amount of water is being wasted.",
+    "location": "udupi",
+    "category": "Garbage",
+    "department": "Sanitation",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 23,
+        "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+        "similarity": 30
+      },
+      {
+        "id": 24,
+        "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+        "similarity": 30
+      }
+    ],
+    "isAnomaly": false,
+    "riskScore": 20,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:08:18.214Z"
+  },
+  {
+    "id": 28,
+    "complaint": "A water pipeline is leaking continuously near the main road and a large amount of water is being wasted.",
+    "location": "kuvempunagar",
+    "category": "Water",
+    "department": "General Administration",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 27,
+        "complaint": "A water pipeline is leaking continuously near the main road and a large amount of water is being wasted.",
+        "similarity": 100
+      },
+      {
+        "id": 23,
+        "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+        "similarity": 30
+      },
+      {
+        "id": 24,
+        "complaint": "There is a major water pipe leakage near the main road, and water has been continuously wasting for two days.",
+        "similarity": 30
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 48,
+    "riskLevel": "Medium Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:11:25.438Z"
+  },
+  {
+    "id": 29,
+    "complaint": "Power line problem",
+    "location": "kerala",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "Medium",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 25,
+    "riskLevel": "Low Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:16:26.945Z"
+  },
+  {
+    "id": 30,
+    "complaint": "The main drainage line near the residential area is blocked, causing dirty water to overflow onto the road and creating a health and safety risk.",
+    "location": "halady",
+    "category": "Water",
+    "department": "General Administration",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 25,
+        "complaint": "The drainage near the residential area is blocked and dirty water is collecting on the road.",
+        "similarity": 35
+      }
+    ],
+    "isAnomaly": false,
+    "riskScore": 50,
+    "riskLevel": "Medium Risk",
+    "priority": "High",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:25:09.038Z"
+  },
+  {
+    "id": 31,
+    "complaint": "The main drainage line near the residential area is blocked, causing dirty water to overflow onto the road and creating a health and safety risk.",
+    "location": "hampi",
+    "category": "Water",
+    "department": "General Administration",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 30,
+        "complaint": "The main drainage line near the residential area is blocked, causing dirty water to overflow onto the road and creating a health and safety risk.",
+        "similarity": 100
+      },
+      {
+        "id": 25,
+        "complaint": "The drainage near the residential area is blocked and dirty water is collecting on the road.",
+        "similarity": 35
+      }
+    ],
+    "isAnomaly": false,
+    "riskScore": 50,
+    "riskLevel": "Medium Risk",
+    "priority": "High",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:28:35.134Z"
+  },
+  {
+    "id": 32,
+    "complaint": "street lamp is not working for 3 days",
+    "location": "mudoori",
+    "category": "Other",
+    "department": "General Administration",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 10,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:33:55.642Z"
+  },
+  {
+    "id": 33,
+    "complaint": "the big tree is fallen to road which blocking vehicles and making traffic",
+    "location": "yelhanka",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 10,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:43:29.757Z"
+  },
+  {
+    "id": 34,
+    "complaint": "road is blocked due to accident",
+    "location": "majestic",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Critical",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 55,
+    "riskLevel": "Medium Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "createdAt": "2026-08-18T08:44:26.774Z"
+  },
+  {
+    "id": 35,
+    "complaint": "electric issue in school",
+    "location": "bellary",
+    "category": "Other",
+    "department": "General Administration",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 10,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Other-bellary",
+    "clusterTitle": "Other civic issues",
+    "clusterLevel": "None",
+    "clusterReports": 1,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "createdAt": "2026-08-18T09:29:15.457Z"
+  },
+  {
+    "id": 36,
+    "complaint": "improper garbage dispose",
+    "location": "kerala",
+    "category": "Garbage",
+    "department": "Sanitation",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 10,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Garbage-kerala",
+    "clusterTitle": "Garbage accumulation",
+    "clusterLevel": "None",
+    "clusterReports": 1,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "createdAt": "2026-08-18T09:46:15.673Z"
+  },
+  {
+    "id": 37,
+    "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+    "location": "gandhinagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 40,
+    "riskLevel": "Medium Risk",
+    "priority": "High",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Electricity-gandhinagar",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "None",
+    "clusterReports": 1,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "createdAt": "2026-08-18T09:50:04.427Z"
+  },
+  {
+    "id": 38,
+    "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 19,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 20,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 100,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Electricity-indiranagar",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "None",
+    "clusterReports": 11,
+    "clusterSimilarity": 50,
+    "previousClusterRisk": 90,
+    "riskTrend": "→",
+    "clusterRiskBoost": 20,
+    "createdAt": "2026-08-18T09:51:43.078Z"
+  },
+  {
+    "id": 39,
+    "complaint": "The street light near the main junction is not working and the road is dark at night.",
+    "location": "Indiranagar",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 38,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 42
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 40,
+    "riskLevel": "Medium Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Road-Damage-indiranagar",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "None",
+    "clusterReports": 2,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "createdAt": "2026-08-18T09:52:05.769Z"
+  },
+  {
+    "id": 40,
+    "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 37,
+        "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "Electricity-indiranagar",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "None",
+    "clusterReports": 12,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 20,
+    "createdAt": "2026-08-18T09:52:22.938Z"
+  },
+  {
+    "id": 41,
+    "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 38,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 19,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 50
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 100,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": true,
+    "clusterId": "Electricity-indiranagar",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "Medium",
+    "clusterReports": 13,
+    "clusterSimilarity": 60,
+    "previousClusterRisk": 88,
+    "riskTrend": "↑",
+    "clusterRiskBoost": 20,
+    "createdAt": "2026-08-18T09:54:47.571Z"
+  },
+  {
+    "id": 42,
+    "complaint": "The street light near the main junction is not working and the road is dark at night.",
+    "location": "Indiranagar",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 39,
+        "complaint": "The street light near the main junction is not working and the road is dark at night.",
+        "similarity": 100
+      },
+      {
+        "id": 38,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 42
+      },
+      {
+        "id": 41,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 42
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 63,
+    "riskLevel": "High Risk",
+    "priority": "High",
+    "status": "Pending",
+    "clusterDetected": true,
+    "clusterId": "Road-Damage-indiranagar",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "Emerging",
+    "clusterReports": 3,
+    "clusterSimilarity": 100,
+    "previousClusterRisk": 50,
+    "riskTrend": "↑",
+    "clusterRiskBoost": 15,
+    "createdAt": "2026-08-18T09:55:09.204Z"
+  },
+  {
+    "id": 43,
+    "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "High",
+    "similarComplaints": [
+      {
+        "id": 37,
+        "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+        "similarity": 100
+      },
+      {
+        "id": 40,
+        "complaint": "Several street lights in Indiranagar are not working and people feel unsafe at night.",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 95,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": true,
+    "clusterId": "Electricity-indiranagar",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "High",
+    "clusterReports": 14,
+    "clusterSimilarity": 100,
+    "previousClusterRisk": 89,
+    "riskTrend": "↑",
+    "clusterRiskBoost": 25,
+    "createdAt": "2026-08-18T09:55:27.408Z"
+  },
+  {
+    "id": 44,
+    "complaint": "The street light near the bus stop is broken.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "Medium",
+    "similarComplaints": [
+      {
+        "id": 38,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 41,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 32
+      },
+      {
+        "id": 17,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 32
+      },
+      {
+        "id": 18,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 32
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-178419",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "High",
+    "clusterReports": 15,
+    "clusterSimilarity": 39,
+    "previousClusterRisk": 90,
+    "riskTrend": "→",
+    "clusterRiskBoost": 20,
+    "incidentId": "INC-178419",
+    "incidentTitle": "Street-light failures",
+    "incidentPressure": "High",
+    "reports24h": 15,
+    "reportVelocity": "15 reports / 24h",
+    "unresolvedReports": 15,
+    "recommendedAction": "Dispatch Electrical field team immediately for coordinated resolution.",
+    "createdAt": "2026-08-18T10:18:44.074Z"
+  },
+  {
+    "id": 45,
+    "complaint": "The street light near the main road is not working",
+    "location": "Indiranagar Bus Stop",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 39,
+        "complaint": "The street light near the main junction is not working and the road is dark at night.",
+        "similarity": 64
+      },
+      {
+        "id": 42,
+        "complaint": "The street light near the main junction is not working and the road is dark at night.",
+        "similarity": 64
+      },
+      {
+        "id": 44,
+        "complaint": "The street light near the bus stop is broken.",
+        "similarity": 42
+      },
+      {
+        "id": 32,
+        "complaint": "street lamp is not working for 3 days",
+        "similarity": 31
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 58,
+    "riskLevel": "Medium Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "clusterDetected": true,
+    "clusterId": "INC-177639",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "Medium",
+    "clusterReports": 4,
+    "clusterSimilarity": 64,
+    "previousClusterRisk": 54,
+    "riskTrend": "↑",
+    "clusterRiskBoost": 10,
+    "incidentId": "INC-177639",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "Medium",
+    "reports24h": 4,
+    "reportVelocity": "4 reports / 24h",
+    "unresolvedReports": 4,
+    "recommendedAction": "Assign Public Works team for priority inspection and action.",
+    "createdAt": "2026-08-18T10:20:38.876Z"
+  },
+  {
+    "id": 46,
+    "complaint": "The street light near the bus stop is broken.",
+    "location": "Indiranagar",
+    "category": "Electricity",
+    "department": "Electrical",
+    "severity": "Medium",
+    "similarComplaints": [
+      {
+        "id": 44,
+        "complaint": "The street light near the bus stop is broken.",
+        "similarity": 100
+      },
+      {
+        "id": 38,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 41,
+        "complaint": "The street light near the bus stop is broken and the area is unsafe at night.",
+        "similarity": 50
+      },
+      {
+        "id": 45,
+        "complaint": "The street light near the main road is not working",
+        "similarity": 42
+      },
+      {
+        "id": 16,
+        "complaint": "The street light near the bus stop has been broken for several days, making the road unsafe at night.",
+        "similarity": 32
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 90,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-178419",
+    "clusterTitle": "Street-light failures",
+    "clusterLevel": "High",
+    "clusterReports": 16,
+    "clusterSimilarity": 58,
+    "previousClusterRisk": 90,
+    "riskTrend": "→",
+    "clusterRiskBoost": 20,
+    "incidentId": "INC-178419",
+    "incidentTitle": "Street-light failures",
+    "incidentPressure": "High",
+    "reports24h": 16,
+    "reportVelocity": "16 reports / 24h",
+    "unresolvedReports": 16,
+    "recommendedAction": "Dispatch Electrical field team immediately for coordinated resolution.",
+    "createdAt": "2026-08-18T10:24:59.975Z"
+  },
+  {
+    "id": 47,
+    "complaint": "The street light near the main road is not working.",
+    "location": "halady",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 45,
+        "complaint": "The street light near the main road is not working",
+        "similarity": 80
+      },
+      {
+        "id": 39,
+        "complaint": "The street light near the main junction is not working and the road is dark at night.",
+        "similarity": 53
+      },
+      {
+        "id": 42,
+        "complaint": "The street light near the main junction is not working and the road is dark at night.",
+        "similarity": 53
+      },
+      {
+        "id": 44,
+        "complaint": "The street light near the bus stop is broken.",
+        "similarity": 42
+      },
+      {
+        "id": 46,
+        "complaint": "The street light near the bus stop is broken.",
+        "similarity": 42
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 55,
+    "riskLevel": "Medium Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-162319",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "None",
+    "clusterReports": 1,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "incidentId": "INC-162319",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "None",
+    "reports24h": 1,
+    "reportVelocity": "1 report / 24h",
+    "unresolvedReports": 1,
+    "recommendedAction": "Continue normal complaint processing.",
+    "createdAt": "2026-08-18T10:27:31.794Z"
+  },
+  {
+    "id": 48,
+    "complaint": "Road Damage",
+    "location": "Indiranagar",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [],
+    "isAnomaly": true,
+    "riskScore": 40,
+    "riskLevel": "Medium Risk",
+    "priority": "Medium",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-177639",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "Medium",
+    "clusterReports": 4,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 54,
+    "riskTrend": "→",
+    "clusterRiskBoost": 10,
+    "incidentId": "INC-177639",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "Medium",
+    "reports24h": 4,
+    "reportVelocity": "4 reports / 24h",
+    "unresolvedReports": 4,
+    "recommendedAction": "Assign Public Works team for priority inspection and action.",
+    "createdAt": "2026-08-18T10:33:36.959Z"
+  },
+  {
+    "id": 49,
+    "complaint": "Road Damage",
+    "location": "Indiranagar",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 48,
+        "complaint": "Road Damage",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": true,
+    "riskScore": 60,
+    "riskLevel": "High Risk",
+    "priority": "High",
+    "status": "Pending",
+    "clusterDetected": true,
+    "clusterId": "INC-177639",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "Medium",
+    "clusterReports": 5,
+    "clusterSimilarity": 100,
+    "previousClusterRisk": 51,
+    "riskTrend": "↑",
+    "clusterRiskBoost": 20,
+    "incidentId": "INC-177639",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "Medium",
+    "reports24h": 5,
+    "reportVelocity": "5 reports / 24h",
+    "unresolvedReports": 5,
+    "recommendedAction": "Assign Public Works team for priority inspection and action.",
+    "createdAt": "2026-08-18T10:34:19.345Z"
+  },
+  {
+    "id": 50,
+    "complaint": "Road Damage",
+    "location": "koramangala",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Low",
+    "similarComplaints": [
+      {
+        "id": 48,
+        "complaint": "Road Damage",
+        "similarity": 100
+      },
+      {
+        "id": 49,
+        "complaint": "Road Damage",
+        "similarity": 100
+      }
+    ],
+    "isAnomaly": false,
+    "riskScore": 20,
+    "riskLevel": "Low Risk",
+    "priority": "Low",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-523269",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "None",
+    "clusterReports": 1,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 0,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "incidentId": "INC-523269",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "None",
+    "reports24h": 1,
+    "reportVelocity": "1 report / 24h",
+    "unresolvedReports": 1,
+    "recommendedAction": "Continue normal complaint processing.",
+    "createdAt": "2026-08-18T10:34:38.660Z"
+  },
+  {
+    "id": 51,
+    "complaint": "There is a large pothole causing accidents near the market.",
+    "location": "Koramangala",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Critical",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 55,
+    "riskLevel": "Medium Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-523269",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "None",
+    "clusterReports": 2,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 20,
+    "riskTrend": "→",
+    "clusterRiskBoost": 0,
+    "incidentId": "INC-523269",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "None",
+    "reports24h": 2,
+    "reportVelocity": "2 reports / 24h",
+    "unresolvedReports": 2,
+    "recommendedAction": "Continue normal complaint processing.",
+    "createdAt": "2026-08-18T10:36:01.522Z"
+  },
+  {
+    "id": 52,
+    "complaint": "A dangerous pothole is present near the market and vehicles are struggling.",
+    "location": "Koramangala",
+    "category": "Road Damage",
+    "department": "Public Works",
+    "severity": "Critical",
+    "similarComplaints": [],
+    "isAnomaly": false,
+    "riskScore": 65,
+    "riskLevel": "High Risk",
+    "priority": "Critical",
+    "status": "Pending",
+    "clusterDetected": false,
+    "clusterId": "INC-523269",
+    "clusterTitle": "Road damage and potholes",
+    "clusterLevel": "None",
+    "clusterReports": 3,
+    "clusterSimilarity": 0,
+    "previousClusterRisk": 38,
+    "riskTrend": "→",
+    "clusterRiskBoost": 10,
+    "incidentId": "INC-523269",
+    "incidentTitle": "Road damage and potholes",
+    "incidentPressure": "None",
+    "reports24h": 3,
+    "reportVelocity": "3 reports / 24h",
+    "unresolvedReports": 3,
+    "recommendedAction": "Continue normal complaint processing.",
+    "createdAt": "2026-08-18T10:37:00.325Z"
+  }
+]

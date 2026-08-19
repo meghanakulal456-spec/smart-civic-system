@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Civic System</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #12355b;
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: #1d8f5a;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
+
+        .hero h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+
+        .hero p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        /* CONTAINER */
+
+        .container {
+            max-width: 650px;
+            margin: 10px auto 50px;
+            padding: 0 20px;
+        }
+
+        /* CARD */
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* FORM */
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            padding: 14px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        textarea:focus,
+        input:focus {
+            border-color: #2563eb;
+        }
+
+        /* SUBMIT */
+
+        .submit-button {
+            width: 100%;
+            margin-top: 25px;
+
+            padding: 15px;
+
+            background: #2563eb;
+            border: none;
+
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* RESULT */
+
+        #result {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .result-card {
+            background: #f0fdf4;
+
+            border-left: 5px solid #16a34a;
+
+            padding: 20px;
+
+            border-radius: 8px;
+        }
+
+        .result-card h3 {
+            margin-top: 0;
+        }
+
+        /* RESULT GRID */
+
+        .result-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+        .result-item {
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 7px;
+        }
+
+        .result-item strong {
+            display: block;
+
+            font-size: 12px;
+
+            color: #64748b;
+
+            margin-bottom: 5px;
+        }
+
+        /* NAVIGATION BUTTONS */
+
+        .navigation-buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .navigation-button {
+
+            flex: 1;
+
+            min-width: 200px;
+
+            text-align: center;
+
+            padding: 13px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            color: white;
+        }
+
+        .verify-button {
+            background: #16a34a;
+        }
+
+        .verify-button:hover {
+            background: #15803d;
+        }
+
+        .dashboard-button {
+            background: #12355b;
+        }
+
+        .dashboard-button:hover {
+            background: #0d2947;
+        }
+
+        .new-button {
+            background: #2563eb;
+        }
+
+        .new-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+
+            padding: 20px;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 600px) {
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+            }
+
+            .navigation-button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏙️ Smart Civic
+    </div>
+
+    <div class="badge">
+        ● Citizen Portal
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Report a Civic Issue
+    </h1>
+
+    <p>
+        Help improve your community by reporting
+        problems in your area.
+    </p>
+
+</section>
+
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="card">
+
+
+        <!-- COMPLAINT FORM -->
+
+        <form id="complaintForm">
+
+
+            <label>
+                Describe the Problem
+            </label>
+
+            <textarea
+                id="complaint"
+                placeholder="Example: A large pothole is present near the school..."
+                required
+            ></textarea>
+
+
+
+            <label>
+                Location
+            </label>
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Example: Indiranagar"
+                required
+            />
+
+
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                Submit Complaint
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- RESULT -->
+
+        <div id="result"></div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+    Smart Civic Complaint Management System
+
+</div>
+
+
+
+<script>
+
+
+/*
+========================================
+SUBMIT COMPLAINT
+========================================
+*/
+
+document
+    .getElementById("complaintForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const complaint =
+                document
+                    .getElementById("complaint")
+                    .value
+                    .trim();
+
+
+            const location =
+                document
+                    .getElementById("location")
+                    .value
+                    .trim();
+
+
+            const result =
+                document.getElementById(
+                    "result"
+                );
+
+
+            /*
+            SHOW LOADING
+            */
+
+            result.style.display =
+                "block";
+
+
+            result.innerHTML = `
+
+                <div class="result-card">
+
+                    ⏳ Analyzing your complaint...
+
+                </div>
+
+            `;
+
+
+            try {
+
+
+                /*
+                SEND TO SERVER
+                */
+
+                const response =
+                    await fetch(
+                        "/api/complaints",
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify({
+
+                                    complaint:
+                                        complaint,
+
+                                    location:
+                                        location
+
+                                })
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+
+                /*
+                ERROR CHECK
+                */
+
+                if (!response.ok) {
+
+                    throw new Error(
+
+                        data.message ||
+                        "Submission failed"
+
+                    );
+
+                }
+
+
+
+                /*
+                SHOW RESULT
+                */
+
+                result.innerHTML = `
+
+                    <div class="result-card">
+
+
+                        <h3>
+
+                            ✅ Complaint Submitted Successfully
+
+                        </h3>
+
+
+                        <p>
+
+                            Your complaint has been
+                            forwarded for officer review.
+
+                        </p>
+
+
+
+                        <div class="result-grid">
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    COMPLAINT ID
+                                </strong>
+
+                                #${data.complaintId}
+
+                            </div>
+
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    CATEGORY
+                                </strong>
+
+                                ${data.category}
+
+                            </div>
+
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    SEVERITY
+                                </strong>
+
+                                ${data.severity}
+
+                            </div>
+
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    RISK SCORE
+                                </strong>
+
+                                ${data.riskScore}
+
+                            </div>
+
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    RISK LEVEL
+                                </strong>
+
+                                ${data.riskLevel}
+
+                            </div>
+
+
+
+                            <div class="result-item">
+
+                                <strong>
+                                    PRIORITY
+                                </strong>
+
+                                ${data.priority || "Processing"}
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- NAVIGATION BUTTONS -->
+
+                        <div class="navigation-buttons">
+
+
+                            <a
+                                href="/verify.html?id=${data.complaintId}"
+                                class="navigation-button verify-button">
+
+                                ✅ Track / Verify Complaint
+
+                            </a>
+
+
+
+                            <a
+                                href="/dashboard.html"
+                                class="navigation-button dashboard-button">
+
+                                👮 View Officer Dashboard
+
+                            </a>
+
+
+
+                            <a
+                                href="/"
+                                class="navigation-button new-button">
+
+                                📝 Submit Another Complaint
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+                `;
+
+
+
+                /*
+                CLEAR FORM
+                */
+
+                document
+                    .getElementById(
+                        "complaintForm"
+                    )
+                    .reset();
+
+
+            }
+
+
+            catch(error) {
+
+
+                /*
+                ERROR MESSAGE
+                */
+
+                result.innerHTML = `
+
+                    <div
+                        style="
+                            background:#fef2f2;
+                            padding:15px;
+                            border-radius:8px;
+                            color:#b91c1c;
+                        "
+                    >
+
+                        ❌ ${error.message}
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
