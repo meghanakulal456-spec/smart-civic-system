@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const path = require("path");
 
 const detectCategory = require("./services/category");
 const detectSeverity = require("./services/severity");
@@ -20,7 +21,9 @@ app.use(express.json());
 app.use(
     express.static("public")
 );
-
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // =========================================
 // SUBMIT COMPLAINT
